@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Saira&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+.HeroSec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 5rem;
+    opacity: 0;
+    animation: slideIn 1.2s ease-in-out forwards;
+}
+
+.HeroSec h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    color: #e1dbd7;
+    letter-spacing: 0.1rem;
+    line-height: 7rem;
+    text-align: center;
+}
+
+.HeroSec hr {
+    height: 1px;
+    border: 0;
+    width: 40%;
+    margin: 1rem auto;
+    border: 1px solid #e1dbd7;
+}
+
+.HeroSec p {
+    font-family: 'Saira', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #151515;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+    text-align: center;
+    background-color: #4ee643;
+    border-radius: 50px;
+    padding: 0.3rem 1rem;
+    box-shadow: inset 0 1px #ffffff, 0 10px 35px #00000050;
+    /* make the text unselectable */
+}
+
+.HeroSec img {
+    border-radius: 50px;
+    padding: 0.8rem 4rem;
+    cursor: pointer;
+    margin-top: 8rem;
+    transition: all 0.3s ease;
+    height: 3rem;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, #e5e5e511 0%, #15151515 100%);
+    animation: bounce 2s ease-in-out 1s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 912px) {
+
+    .HeroSec h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    .HeroSec p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .HeroSec img {
+        padding: 0.8rem 2rem;
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .HeroSec h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    .HeroSec p {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+
+    /* .HeroSec img {
+        padding: 0.8rem 1rem;
+        margin-top: 7rem;
+    } */
+}
+
+
+@media screen and (max-width: 486px) {
+    .HeroSec p {
+        letter-spacing: 0.03rem;
+        font-size: 0.7rem;
+        line-height: 1rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .HeroSec p {
+        letter-spacing: 0rem;
+        font-size: 0.55rem;
+        line-height: 1rem;
+    }
+}

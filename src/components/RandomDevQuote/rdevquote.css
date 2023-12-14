@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+.RandomDevQuote {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 2.2vh;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 2rem 1rem 2rem;
+    color: #e1dbd7;
+    transform: translateY(-13%);
+}

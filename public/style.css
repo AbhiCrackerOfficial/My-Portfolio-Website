@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: none;
+}
+
+body{
+    background: #151515;
+    color: #e1dbd7;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+h1,p,span {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Colors to use
+Black : #232323
+Green : #50ff00 
+Red : #ff0050
+White : #e1dbd7
+*/

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Saira', sans-serif;
+    font-size: 1rem;
+    background-color: #151515;
+    box-shadow: inset 0 1px #6a6a6a, 0 10px 35px #00000050;
+    padding: 0.5rem 0.9rem;
+    margin: 1rem auto;
+    border-radius: 50px;
+    z-index: 9999;
+    width: 80vw;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff0020;
+    padding: 0rem 1.2rem 0rem 0.2rem;
+    border-radius: 50px;
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    border: none;
+    color: #151515;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+nav .logo span {
+    margin-left: 0.8rem;
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: #151515;
+}
+
+nav ul {
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li :hover,
+.active {
+    background-color: #e1dbd7;
+    color: #444;
+}
+
+
+
+nav ul li a {
+    color: #e1dbd7;
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0.1rem;
+    margin-left: 0rem 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+nav img {
+    border: #ff0020 2px solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    transform: translateY(3.5px);
+}
+
+nav button {
+    background-color: #ff0020;
+    padding: 1rem 1.25rem;
+    border-radius: 50px;
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    border: none;
+    color: #151515;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger-react {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hamburger-react .hamburger-react-box {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.hamburger-react .hamburger-react-inner {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition-duration: 0.2s;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.hamburger-react .hamburger-react-inner::before,
+.hamburger-react .hamburger-react-inner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition-duration: 0.2s;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.hamburger-react .hamburger-react-inner::before {
+    top: -6px;
+}
+
+.hamburger-react .hamburger-react-inner::after {
+    bottom: -6px;
+}
+
+/* Add styles for the active state of the hamburger icon */
+.hamburger-react.is-active .hamburger-react-inner {
+    transform: rotate(45deg);
+}
+
+.hamburger-react.is-active .hamburger-react-inner::before {
+    transform: rotate(-45deg) translate(-6px, 0);
+}
+
+.hamburger-react.is-active .hamburger-react-inner::after {
+    transform: rotate(-45deg) translate(6px, 0);
+}
+
+
+@media (max-width: 912px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 1rem 0;
+    }
+}
+
+.menu-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+}
+
+@media screen and (max-width: 370px) {
+    nav {
+        width: 95vw;
+    }
+    nav .logo {
+        padding: 0rem 0.5rem 0rem 0.2rem;
+    }
+    nav .logo span {
+        margin-left: 0.5rem;
+        margin-left: 0.2rem;
+        font-size: 0.8rem;
+    }
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+    nav img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    nav button {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

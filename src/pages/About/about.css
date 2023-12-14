@@ -1,0 +1,112 @@
+.AboutSec-1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+    padding: 2rem 0rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; 
+    animation: slideLeft 1.2s ease-in-out forwards; 
+}
+
+.Sec1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4ee643;
+    border-radius: 5rem;
+    border-top-right-radius: 0;    
+    padding: 3.5rem;
+    margin: 0 1rem 0 15rem;
+    box-shadow: inset 0 1px #ffffff, 0 10px 35px #00000050;
+    transition: all 0.2s ease-in;
+}
+
+.Sec2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 5rem;
+    border-top-left-radius: 0rem;
+    margin: 0 15rem 0 1rem;
+    padding: 1.5rem;
+    vertical-align: middle;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%);
+    transition: all 0.2s ease-in;
+    animation: slideRight 1.2s ease-in-out forwards;
+}
+
+.Sec1 h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #151515;
+    letter-spacing: 0.1rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+
+.Sec2 p {
+    font-family: 'Saira', sans-serif;
+    padding: 1rem;
+    color: #e5e5e5;
+    letter-spacing: 0.1rem;
+    line-height: 1.2rem;
+    text-align: left;
+}
+
+@keyframes slideRight{
+    0% {
+        opacity: 0;
+        transform: translateX(-50%); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+@keyframes slideLeft{
+    0% {
+        opacity: 0;
+        transform: translateX(50%); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 912px) {
+    .AboutSec {
+        grid-template-columns: 1fr; /* Set a single column for smaller screens */
+    }
+
+    .Sec1,
+    .Sec2 {
+        margin: 1rem;
+    }
+}

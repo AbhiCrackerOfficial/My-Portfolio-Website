@@ -188,7 +188,7 @@ nav button {
     display: flex;
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 378px) {
     nav {
         width: 95vw;
     }

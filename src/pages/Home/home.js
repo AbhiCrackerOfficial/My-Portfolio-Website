@@ -6,7 +6,11 @@ function Home() {
     return (
         <div className="HeroSec">
             <h1>
-                Hey! <br></br> I'm Abhishek Kumar
+                Hey!
+            </h1>
+            <br/>
+            <h1>
+                I'm ABHISHEK KUMAR
             </h1>
             <br></br>
             <p>Computer Engineer | Software Developer | Security Pentester</p>

@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink, Routes, Route } from 'react-router-dom';
+import { Divide as Hamburger } from 'hamburger-react';
+
 import './navbar.css';
 import logo from '../../assets/images/logo.png';
-import { Link, NavLink, Routes, Route } from 'react-router-dom';
 import Home from '../../pages/Home/home';
 import About from '../../pages/About/about';
 import Skills from '../../pages/Skills/skills';
 import Projects from '../../pages/Projects/projects';
-import { Divide as Hamburger } from 'hamburger-react';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,16 @@ function Navbar() {
     const closeMenu = () => {
         setIsOpen(false);
     };
-    
+
+    useEffect(() => {
+        const contactBtn = document.getElementById('contact');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                window.location.href = '/';
+            });
+        }
+    }, []);
+
     return (
         <>
             <nav>
@@ -36,27 +46,27 @@ function Navbar() {
                 </span>
                 <ul className={`menu${isOpen ? '-open' : ''}`}>
                     <li>
-                        <NavLink to="/" activeclassname="active" end onClick={closeMenu}>
+                        <NavLink to="/" activeClassName="active" exact onClick={closeMenu}>
                             Home
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" activeclassname="active" onClick={closeMenu}>
+                        <NavLink to="/about" activeClassName="active" onClick={closeMenu}>
                             About
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/skills" activeclassname="active" onClick={closeMenu}>
+                        <NavLink to="/skills" activeClassName="active" onClick={closeMenu}>
                             Skills
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/projects" activeclassname="active" onClick={closeMenu}>
+                        <NavLink to="/projects" activeClassName="active" onClick={closeMenu}>
                             Projects
                         </NavLink>
                     </li>
                 </ul>
-                <button>Contact</button>
+                <button id="contact" >Contact</button>
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />

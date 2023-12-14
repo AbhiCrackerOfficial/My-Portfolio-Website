@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './rdevquote.css';
+
+const API_URL = 'https://random-dev-quotes.abhicracker.com/api/quotes/random';
 
 const RDevQuote = () => {
     const [quote, setQuote] = useState('');
+    const intervalRef = useRef(null);
 
-    const randomQuote = async () => {
+    const randomQuote = useCallback(async () => {
         try {
-            const response = await fetch('https://random-dev-quotes.abhicracker.com/api/quotes/random');
+            const response = await fetch(API_URL);
             if (!response.ok) {
                 throw new Error('Failed to fetch quote');
             }
@@ -15,17 +18,17 @@ const RDevQuote = () => {
         } catch (error) {
             console.error(error);
         }
-    };
+    }, []);
 
     useEffect(() => {
         randomQuote(); // Fetch initial quote
 
-        const interval = setInterval(randomQuote, 5000); // Fetch new quote every 15 seconds
+        intervalRef.current = setInterval(randomQuote, 5000); // Fetch new quote every 5 seconds
 
         return () => {
-            clearInterval(interval); // Clear interval on component unmount
+            clearInterval(intervalRef.current); // Clear interval on component unmount
         };
-    }, []);
+    }, [randomQuote]);
 
     return (
         <span className='RandomDevQuote'>

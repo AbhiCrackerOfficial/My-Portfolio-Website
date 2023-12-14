@@ -34,10 +34,12 @@ const About = () => {
         // Reset the manual scroll flag
         isManuallyScrolled.current = false;
 
+        const sectionLength = shownSections.length;
+
         // For the initial Sec2, use a random time
-        if (shownSections.length === 1) {
+        if (sectionLength === 1) {
             const sectionTimeout = setTimeout(() => {
-                const nextSection = shownSections[shownSections.length - 1] + 1;
+                const nextSection = shownSections[sectionLength - 1] + 1;
                 setShownSections([...shownSections, nextSection]);
             }, getRandomTime());
 
@@ -45,9 +47,9 @@ const About = () => {
         }
 
         // For subsequent Sec2 elements, use a constant 5000ms delay
-        if (shownSections.length > 1 && shownSections.length % 2 === 0) {
+        if (sectionLength > 1 && sectionLength % 2 === 0) {
             const sectionTimeout = setTimeout(() => {
-                const nextSection = shownSections[shownSections.length - 1] + 1;
+                const nextSection = shownSections[sectionLength - 1] + 1;
                 setShownSections([...shownSections, nextSection]);
             }, 5000);
 
@@ -55,19 +57,21 @@ const About = () => {
         }
     }, [shownSections]);
 
+    const isSectionShown = (section) => shownSections.includes(section);
+    const sectionLength = shownSections.length;
+    const isOddSection = sectionLength > 1 && sectionLength % 2 === 1;
+
     return (
         <>
-            <div
-                className='AboutSec-1'
-            >
-                {shownSections.includes(1) && (
+            <div className='AboutSec-1'>
+                {isSectionShown(1) && (
                     <div className="Sec1">
                         <h1>
                             Tell me About Yourself.
                         </h1>
                     </div>
                 )}
-                {shownSections.includes(2) && (
+                {isSectionShown(2) && (
                     <div className="Sec2" ref={lastSectionRef}>
                         <p>As a tech enthusiast, I dived into the world of computers back in 2015 when I was just a sixth-grader
                             (<i>Yeah, started young, didn't I?</i>). Fast forward to today, and here I am, rocking the title of a
@@ -78,7 +82,7 @@ const About = () => {
                                 to make their daily life smoother?</i> I'm all about it.<br></br><br></br></p>
                     </div>
                 )}
-                {shownSections.includes(3) && (
+                {isSectionShown(3) && (
                     <div className='Sec2'>
                         <p> And hey, I'm not just your average coder. I'm also diving into the world of Penetration Testing and
                             Ethical Hacking, because, you know, why not? I use my ninja skills to find vulnerabilities and beef up
@@ -90,7 +94,7 @@ const About = () => {
                             make some digital magic happen! 🚀<br></br><br></br></p>
                     </div>
                 )}
-                {shownSections.length > 1 && shownSections.length % 2 === 1 && (
+                {isOddSection && (
                     <ScrollArrow link='/skills'></ScrollArrow>
                 )}
             </div>

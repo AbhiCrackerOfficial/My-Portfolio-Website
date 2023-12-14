@@ -32,6 +32,8 @@
 }
 
 .HeroSec p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-family: 'Saira', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
@@ -46,32 +48,6 @@
     /* make the text unselectable */
 }
 
-.HeroSec img {
-    border-radius: 50px;
-    padding: 0.8rem 4rem;
-    cursor: pointer;
-    margin-top: 8rem;
-    transition: all 0.3s ease;
-    height: 3rem;
-    backdrop-filter: blur(5px);
-    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, #e5e5e511 0%, #15151515 100%);
-    animation: bounce 2s ease-in-out 1s infinite;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
 
 @media screen and (max-width: 912px) {
 

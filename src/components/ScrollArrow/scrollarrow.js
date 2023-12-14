@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './scrollarrow.css';
-import arrow from '../../assets/extras/arrow.png';
-// import { Link } from 'react-router-dom';
+// import arrow from '../../assets/extras/arrow.png';
+import { Link } from 'react-router-dom';
 
 const ScrollArrow = ({ link }) => {
-    useEffect(() => {
-        const imgElement = document.querySelector('.ScrollArrow');
-        if (imgElement) {
-            imgElement.addEventListener('click', () => {
-                window.location.href = link;
-            });
-        }
-    }, [link]);
-
-    return <img src={arrow} alt='dropDown' className='ScrollArrow' />;
+    return (
+        <div className='scroll-arrow-link'>
+            <Link to={link}>
+                <button className='ScrollArrow'>
+                    <div className='scroll-arrow-img' />
+                </button>
+            </Link>
+        </div>
+    );
 };
-
 
 ScrollArrow.propTypes = {
     link: PropTypes.string.isRequired,
 }
 
-export default ScrollArrow
+export default ScrollArrow;

@@ -1,0 +1,184 @@
+/* .Skills-Sec{ */
+/* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+/* grid-gap: 0rem; */
+/* border-radius: 5rem; */
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* flex-direction: column; */
+/* text-align: left; */
+/* margin: 0 15rem 0 1rem; */
+/* padding: 1.5rem;  */
+/* backdrop-filter: blur(5px); */
+/* box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5); */
+/* background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%); */
+/* transition: all 0.2s ease-in; */
+/* animation: slideRight 1.2s ease-in-out forwards; */
+/* } */
+
+.skill {
+    display: inline-block;
+    border-radius: 25%;
+    margin: 1rem 1rem;
+    padding: 1.5rem;
+    vertical-align: middle;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, #e5e5e50a 0%, #ff002025 100%);
+    transition: all 0.2s ease-in;
+    animation: slideRight 1.2s ease-in-out forwards;
+}
+
+.Skills-Sep h2 {
+    font-family: 'Saira', sans-serif;
+    letter-spacing: 0.25rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e5e5e5;
+    margin: 3.5rem 0rem 0rem 0rem;
+    text-align: center;
+    animation: slideIn 1.2s ease-in-out forwards;
+}
+
+
+
+.skill:hover {
+    scale: 1.2;
+}
+
+.Skills-Sep {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0rem;
+    /* padding: 1rem;  */
+    /* flex-direction: column; */
+    /* text-align: left;
+    margin: 0 15rem 0 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%);
+    transition: all 0.2s ease-in;
+    animation: slideRight 1.2s ease-in-out forwards; */
+
+}
+
+.Skills-Div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.5rem 0rem;
+    /* text-align: left;
+    margin: 0 15rem 0 1rem;
+    padding: 1.5rem; 
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%);
+    transition: all 0.2s ease-in;
+    animation: slideRight 1.2s ease-in-out forwards; */
+}
+
+.Skills-Div h1 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.25rem;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #e5e5e5;
+    text-align: center;
+    animation: slideIn 1.2s ease-in-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 768px) {
+.Skills-Sec {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 1rem;
+    }
+
+    .Skills-Div {
+        margin: 1rem 0rem;
+    }
+
+    .Skills-Div h1 {
+        font-size: 3rem;
+    }
+    
+    .Skills-Sep h2 {
+        font-size: 1.5rem;
+    }
+
+    .skill {
+        margin: 0rem 1rem;
+        padding: 0.8rem;
+    }
+    
+    .skill:hover {
+        scale: 1.1;
+    }
+
+
+} */

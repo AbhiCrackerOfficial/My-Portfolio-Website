@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
-    padding: 2rem 0rem;
+    padding: 2rem 8rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -101,13 +101,19 @@
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 912px) {
-    .AboutSec {
+    .AboutSec-1 {
         grid-template-columns: 1fr; /* Set a single column for smaller screens */
+        padding: 2rem 1rem;
     }
 
     .Sec1,
     .Sec2 {
         margin: 1rem;
+    }
+
+    .Sec1 h1{
+        font-size: 2rem;
+        line-height: 2.4rem;
     }
 }
 

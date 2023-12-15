@@ -130,7 +130,6 @@ const AnimatedCursor = ({
         window.innerWidth > 768 &&
         (('ontouchstart' in window && window.innerWidth <= 1024) || !(('ontouchstart' in window) && window.innerWidth <= 1024));
 
-
     return (
         <>
             {shouldRenderCursor && isVisible && (

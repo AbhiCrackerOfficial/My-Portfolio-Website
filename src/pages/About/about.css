@@ -110,3 +110,16 @@
         margin: 1rem;
     }
 }
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 378px) {
+    .AboutSec {
+        grid-template-columns: 1fr; /* Set a single column for smaller screens */
+    }
+
+    .Sec1,
+    .Sec2 {
+        margin: 0rem 1rem 0rem 1rem;
+    }
+}
+

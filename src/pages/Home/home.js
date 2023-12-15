@@ -12,7 +12,7 @@ function Home() {
             <h1>
                 I'm ABHISHEK KUMAR
             </h1>
-            <br></br>
+            <br/>
             <p>Computer Engineer | Software Developer | Security Pentester</p>
             <ScrollArrow link="/about"></ScrollArrow>
         </div>

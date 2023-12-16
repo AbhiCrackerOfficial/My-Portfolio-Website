@@ -1,22 +1,3 @@
-/* .Skills-Sec{ */
-/* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-/* grid-gap: 0rem; */
-/* border-radius: 5rem; */
-/* display: flex; */
-/* justify-content: center; */
-/* align-items: center; */
-/* flex-direction: column; */
-/* text-align: left; */
-/* margin: 0 15rem 0 1rem; */
-/* padding: 1.5rem;  */
-/* backdrop-filter: blur(5px); */
-/* box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5); */
-/* background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%); */
-/* transition: all 0.2s ease-in; */
-/* animation: slideRight 1.2s ease-in-out forwards; */
-/* } */
-
 .skill {
     display: inline-block;
     font-family: 'Saira', sans-serif;
@@ -106,7 +87,6 @@
 
 @media screen and (max-width: 425px) {
     .skill {
-        /* font-size: 1rem; */
         font-weight: 300;
     }
 

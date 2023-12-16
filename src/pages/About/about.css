@@ -48,7 +48,6 @@
     line-height: 2rem;
     font-weight: bolder;
     color: #151515;
-    /* letter-spacing: 0.1rem; */
     line-height: 4rem;
     text-align: center;
 }
@@ -102,7 +101,7 @@
 /* Media query for smaller screens */
 @media only screen and (max-width: 912px) {
     .AboutSec-1 {
-        grid-template-columns: 1fr; /* Set a single column for smaller screens */
+        grid-template-columns: 1fr;
         padding: 2rem 1rem;
     }
 
@@ -120,7 +119,7 @@
 /* Media query for smaller screens */
 @media only screen and (max-width: 378px) {
     .AboutSec {
-        grid-template-columns: 1fr; /* Set a single column for smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .Sec1,

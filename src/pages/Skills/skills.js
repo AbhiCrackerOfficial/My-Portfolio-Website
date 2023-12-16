@@ -5,7 +5,7 @@ import ScrollArrow from '../../components/ScrollArrow/scrollarrow';
 // import BorderBox from '../../components/BorderBox/borderbox';
 import { BiLogoReact, BiLogoJava } from "react-icons/bi";
 import { TbBrandFlutter, TbBrandDjango, TbBrandCpp, TbBrandPython, TbBrandJavascript, TbBrandNodejs, TbBrandHtml5, TbBrandCss3, TbBrandPhp, TbBrandMysql, TbBrandMongodb, TbBrandVscode } from "react-icons/tb";
-import { SiAndroidstudio, SiGnubash, SiPostman } from "react-icons/si";
+import { SiAndroidstudio, SiArduino, SiCloudflare, SiGnubash, SiPostman } from "react-icons/si";
 
 const Skills = () => {
     const [shownSections, setShownSections] = useState([1]);
@@ -56,7 +56,7 @@ const Skills = () => {
             const sectionTimeout = setTimeout(() => {
                 const nextSection = shownSections[shownSections.length - 1] + 1;
                 setShownSections([...shownSections, nextSection]);
-            }, 5000);
+            }, 3500);
 
             return () => clearTimeout(sectionTimeout);
         }
@@ -85,6 +85,39 @@ const Skills = () => {
         setRandomText(getRandomtext());
     }, []);
 
+    // make size of icons responsive
+    const [size, setSize] = useState(() => {
+        if (window.innerWidth <= 425) {
+            return 50;
+        } else if (window.innerWidth <= 768) {
+            return 60;
+        } else if (window.innerWidth <= 1024) {
+            return 70;
+        } else {
+            return 80;
+        }
+    });
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 425) {
+                setSize(50);
+            } else if (window.innerWidth <= 768) {
+                setSize(60);
+            } else if (window.innerWidth <= 1024) {
+                setSize(70);
+            } else {
+                setSize(80);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
 
     return (
@@ -100,78 +133,110 @@ const Skills = () => {
                 <div className="Sec2">
                     <p>{randomText}</p>
                 </div>
+
             )}
             {shownSections.includes(3) && (
-                <div className="Skills-Div">
-                    <h1>
-                        MY SKILLS
-                    </h1>
-                    <div className='Skills-Sep'>
-                        <h2>
-                            Frameworks
-                        </h2><br />
-                        <div className='skill'>
-                            <BiLogoReact size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandFlutter size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandDjango size={85} />
-                        </div>
-                        <h2>
-                            Languages
-                        </h2><br />
-                        <div className='skill'>
-                            <TbBrandCpp size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandPython size={85} />
-                        </div>
-                        <div className='skill'>
-                            <BiLogoJava size={85} />
-                        </div>
-                        <div className='skill'>
-                            <SiGnubash size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandJavascript size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandNodejs size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandHtml5 size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandCss3 size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandPhp size={85} />
-                        </div>
-                        <h2>
-                            Databases
-                        </h2><br />
-                        <div className='skill'>
-                            <TbBrandMysql size={85} />
-                        </div>
-                        <div className='skill'>
-                            <TbBrandMongodb size={85} />
-                        </div>
-                        <h2>
-                            Tools & IDEs
-                        </h2><br />
-                        <div className='skill'>
-                            <TbBrandVscode size={85} />
-                        </div>
-                        <div className='skill'>
-                            <SiAndroidstudio size={85} />
-                        </div>
-                        <div className='skill'>
-                            <SiPostman size={85} />
+                <>
+                    <hr className='divider' />
+                    <div className="Skills-Div">
+                        <h1>
+                            MY SKILLS
+                        </h1>
+                        <div className='Skills-Sep'>
+                            <h2>
+                                Frameworks
+                            </h2><br />
+                            <div className='skill'>
+                                <BiLogoReact size={size} /><br />
+                                React
+                            </div>
+                            <div className='skill'>
+                                <TbBrandFlutter size={size} /><br />
+                                Flutter
+                            </div>
+                            <div className='skill'>
+                                <TbBrandDjango size={size} /><br />
+                                Django
+                            </div>
+                            <h2>
+                                Languages
+                            </h2><br />
+                            <div className='skill'>
+                                <TbBrandCpp size={size} /><br />
+                                C++
+                            </div>
+                            <div className='skill'>
+                                <TbBrandPython size={size} /><br />
+                                Python
+                            </div>
+                            <div className='skill'>
+                                <BiLogoJava size={size} /><br />
+                                Java
+                            </div>
+                            <div className='skill'>
+                                <SiGnubash size={size} /><br />
+                                Bash
+                            </div>
+                            <div className='skill'>
+                                <TbBrandJavascript size={size} /><br />
+                                JavaScipt
+                            </div>
+                            <div className='skill'>
+                                <TbBrandNodejs size={size} /><br />
+                                Node.js
+                            </div>
+                            <div className='skill'>
+                                <TbBrandHtml5 size={size} /><br />
+                                Html5
+                            </div>
+                            <div className='skill'>
+                                <TbBrandCss3 size={size} /><br />
+                                Css3
+                            </div>
+                            <div className='skill'>
+                                <TbBrandPhp size={size} /><br />
+                                Php
+                            </div>
+                            <h2>
+                                Databases
+                            </h2><br />
+                            <div className='skill'>
+                                <TbBrandMysql size={size} /><br />
+                                MySQL
+                            </div>
+                            <div className='skill'>
+                                <TbBrandMongodb size={size} /><br />
+                                MongoDB
+                            </div>
+                            <h2>
+                                Tools & IDEs
+                            </h2><br />
+                            <div className='skill'>
+                                <TbBrandVscode size={size} /><br />
+                                VsCode
+                            </div>
+                            <div className='skill'>
+                                <SiAndroidstudio size={size} /><br />
+                                Android Studio
+                            </div>
+                            <div className='skill'>
+                                <SiArduino size={size} /><br />
+                                Arduino
+                            </div>
+                            <div className='skill'>
+                                <SiPostman size={size} /><br />
+                                Postman
+                            </div>
+                            <h2>
+                                Cloud Platforms
+                            </h2><br />
+                            <div className='skill'>
+                                <SiCloudflare size={size} /><br />
+                                CloudFlare
+                            </div>
                         </div>
                     </div>
-                </div>
+                </>
             )}
             {shownSections.length > 1 && shownSections.length % 2 === 1 && (
                 <ScrollArrow link='/projects'></ScrollArrow>

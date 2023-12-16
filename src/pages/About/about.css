@@ -43,12 +43,12 @@
 }
 
 .Sec1 h1 {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Saira', sans-serif;
     font-size: 3rem;
     line-height: 2rem;
-    font-weight: 700;
+    font-weight: bolder;
     color: #151515;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     line-height: 4rem;
     text-align: center;
 }

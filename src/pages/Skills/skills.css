@@ -19,13 +19,17 @@
 
 .skill {
     display: inline-block;
+    font-family: 'Saira', sans-serif;
+    font-size: 1.0169rem;
+    font-weight: 600;
+    width: 10rem;
     border-radius: 25%;
     margin: 1rem 1rem;
     padding: 1.5rem;
     vertical-align: middle;
     backdrop-filter: blur(5px);
     box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, #e5e5e50a 0%, #ff002025 100%);
+    background: linear-gradient(0deg, #e5e5e50a 0%, #20ff0025 100%);
     transition: all 0.2s ease-in;
     animation: slideRight 1.2s ease-in-out forwards;
 }
@@ -41,10 +45,19 @@
     animation: slideIn 1.2s ease-in-out forwards;
 }
 
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% 20% 0;
+    backdrop-filter: blur(5px);
+    animation: slideLeft 1.2s ease-in-out forwards;
+}
 
 
 .skill:hover {
-    scale: 1.2;
+    scale: 1.1;
 }
 
 .Skills-Sep {
@@ -52,16 +65,6 @@
     justify-content: center;
     align-items: center;
     margin: 1rem 0rem;
-    /* padding: 1rem;  */
-    /* flex-direction: column; */
-    /* text-align: left;
-    margin: 0 15rem 0 1rem;
-    backdrop-filter: blur(5px);
-    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%);
-    transition: all 0.2s ease-in;
-    animation: slideRight 1.2s ease-in-out forwards; */
-
 }
 
 .Skills-Div {
@@ -70,36 +73,44 @@
     align-items: center;
     flex-direction: column;
     margin: 1.5rem 0rem;
-    /* text-align: left;
-    margin: 0 15rem 0 1rem;
-    padding: 1.5rem; 
-    backdrop-filter: blur(5px);
-    box-shadow: inset 0 1px #878787, 0 10px 35px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, #e5e5e50a 0%, #15151515 100%);
-    transition: all 0.2s ease-in;
-    animation: slideRight 1.2s ease-in-out forwards; */
 }
 
 .Skills-Div h1 {
+    margin-top: 3rem;
     font-family: 'Anton', sans-serif;
+    line-height: 5rem;
     letter-spacing: 0.25rem;
     font-size: 5rem;
     font-weight: 600;
-    color: #e5e5e5;
+    color: #ff0020;
     text-align: center;
     animation: slideIn 1.2s ease-in-out forwards;
 }
 
 
+@media screen and (max-width: 768px) {
+    .skill {
+        font-size: 0.726rem;
+        font-weight: 400;
+        width: 10rem;
+        border-radius: 25%;
+        margin: 1rem 0.5rem;
+        padding: 2.5rem;
+    }
 
+    .Skills-Div h1 {
+        font-size: 3rem;
+        margin-top: 0rem;
+    }
+}
 
+@media screen and (max-width: 425px) {
+    .skill {
+        /* font-size: 1rem; */
+        font-weight: 300;
+    }
 
-
-
-
-
-
-
+}
 
 
 

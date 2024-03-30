@@ -24,10 +24,12 @@ function Navbar() {
         const contactBtn = document.getElementById('contact');
         if (contactBtn) {
             contactBtn.addEventListener('click', () => {
-                window.location.href = '/';
+                // redirect to email
+                window.location.href = 'mailto:contact@abhishekkumar001.dev';
             });
         }
     }, []);
+
 
     return (
         <>
@@ -66,7 +68,7 @@ function Navbar() {
                         </NavLink>
                     </li>
                 </ul>
-                <button id="contact" >Contact</button>
+                <button id="contact">Contact</button>
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />

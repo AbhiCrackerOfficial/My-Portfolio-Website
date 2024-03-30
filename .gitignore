@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 temp.txt
+/.wrangler/
 
 # testing
 /coverage
@@ -18,6 +19,7 @@ temp.txt
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 npm-debug.log*
 yarn-debug.log*

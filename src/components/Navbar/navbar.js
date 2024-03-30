@@ -24,7 +24,6 @@ function Navbar() {
         const contactBtn = document.getElementById('contact');
         if (contactBtn) {
             contactBtn.addEventListener('click', () => {
-                // redirect to email
                 window.location.href = 'mailto:contact@abhishekkumar001.dev';
             });
         }

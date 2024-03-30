@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../About/about.css';
 import ScrollArrow from '../../components/ScrollArrow/scrollarrow';
+import ProjectCard from '../../components/ProjectCard/projectcard';
+import './projects.css';
 
 const Projects = () => {
     const [shownSections, setShownSections] = useState([1]);
     const lastSectionRef = useRef(null);
+    const [randomText, setRandomText] = useState('');
+    const [projects, setProjects] = useState([]);
     const isManuallyScrolled = useRef(false);
 
     function getRandomTime() {
         // return random time between 500 and 2000 ms;
-        return Math.floor(Math.random() * 1500) + 500;
+        return Math.floor(Math.random() * 1000) + 500;
     }
 
     useEffect(() => {
@@ -50,11 +54,54 @@ const Projects = () => {
             const sectionTimeout = setTimeout(() => {
                 const nextSection = shownSections[shownSections.length - 1] + 1;
                 setShownSections([...shownSections, nextSection]);
-            }, 5000);
+            }, 1500);
 
             return () => clearTimeout(sectionTimeout);
         }
     }, [shownSections]);
+
+    useEffect(() => {
+        // Fetch projects data from the API
+        fetch("https://github.abhicracker.com/repos")
+            .then(response => response.json())
+            .then(data => {
+                let final = data.filter(project => project.name !== 'AbhiCrackerOfficial');
+                setProjects(final.sort(() => Math.random() - 0.5));
+            })
+            .catch(error => console.error("Failed to fetch projects", error));
+            
+    }, []); 
+
+    useEffect(() => {
+        const arr = [
+            "Sure, I'd love to! Let's get started.",
+            "Absolutely! Ready when you are.",
+            "Of course! I have a variety to share.",
+            "Certainly! I'll walk you through.",
+            "Definitely! Let's explore.",
+            "Sure thing! Ready to share.",
+            "Yes, indeed! Let's delve in.",
+            "Absolutely! I'm prepared to discuss.",
+            "Of course! I'm eager to showcase.",
+            "Sure thing! I'm here to present."
+        ];
+        
+        
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function getRandomtext() {
+            return shuffleArray(arr)[Math.floor(Math.random() * shuffleArray(arr).length)]
+        }
+        setRandomText(getRandomtext());
+    }, []);
+    
 
     return (
         <>
@@ -68,8 +115,26 @@ const Projects = () => {
                 )}
                 {shownSections.includes(2) && (
                     <div className="Sec2">
-                        <p>Just Wait and Check Again Later . Adding Soon</p>
+                        <p>{randomText}</p>
                     </div>
+                )}
+                {shownSections.includes(3) && (
+                    <>
+                        <div className='Projects-Sep'>
+                            {/* run a loop to display all the projects */}
+                            {projects.map((project) => (
+                                <ProjectCard
+                                    title={project.name}
+                                    description={project.description}
+                                    url={project.url}
+                                    stars={project.stars}
+                                    forks={project.forks}
+                                    watchers={project.watchers}
+                                    tags={project.tags}
+                                />
+                            ))}
+                        </div>
+                    </>
                 )}
                 {shownSections.length > 1 && shownSections.length % 2 === 1 && (
                     <ScrollArrow link='/'></ScrollArrow>

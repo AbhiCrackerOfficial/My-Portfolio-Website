@@ -5,7 +5,7 @@ import ScrollArrow from '../../components/ScrollArrow/scrollarrow';
 // import BorderBox from '../../components/BorderBox/borderbox';
 import { BiLogoReact, BiLogoJava } from "react-icons/bi";
 import { TbBrandFlutter, TbBrandDjango, TbBrandCpp, TbBrandPython, TbBrandJavascript, TbBrandNodejs, TbBrandHtml5, TbBrandCss3, TbBrandPhp, TbBrandMysql, TbBrandMongodb, TbBrandVscode } from "react-icons/tb";
-import { SiAndroidstudio, SiArduino, SiCloudflare, SiGnubash, SiPostman } from "react-icons/si";
+import { SiAmazonaws, SiAndroidstudio, SiArduino, SiCloudflare, SiGnubash, SiHeroku, SiPostman } from "react-icons/si";
 
 const Skills = () => {
     const [shownSections, setShownSections] = useState([1]);
@@ -15,7 +15,7 @@ const Skills = () => {
 
     function getRandomTime() {
         // return random time between 500 and 2000 ms;
-        return Math.floor(Math.random() * 1500) + 500;
+        return Math.floor(Math.random() * 1000) + 500;
     }
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const Skills = () => {
             const sectionTimeout = setTimeout(() => {
                 const nextSection = shownSections[shownSections.length - 1] + 1;
                 setShownSections([...shownSections, nextSection]);
-            }, 3500);
+            }, 2500);
 
             return () => clearTimeout(sectionTimeout);
         }
@@ -193,10 +193,10 @@ const Skills = () => {
                                 <TbBrandCss3 size={size} /><br />
                                 Css3
                             </div>
-                            <div className='skill'>
+                            {/* <div className='skill'>
                                 <TbBrandPhp size={size} /><br />
                                 Php
-                            </div>
+                            </div> */}
                             <h2>
                                 Databases
                             </h2><br />
@@ -233,6 +233,14 @@ const Skills = () => {
                             <div className='skill'>
                                 <SiCloudflare size={size} /><br />
                                 CloudFlare
+                            </div>
+                            <div className='skill'>
+                                <SiAmazonaws size={size}/><br />
+                                AWS
+                                </div>
+                            <div className='skill'>
+                                <SiHeroku size={size} /><br />
+                                Heroku
                             </div>
                         </div>
                     </div>

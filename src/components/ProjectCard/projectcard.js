@@ -21,7 +21,7 @@ function projectcard({ title, description, url, stars, forks, watchers, tags }) 
                     <span className="project-card-star"><FaStar size={12}/> {stars}</span>
                     <span className="project-card-fork"><FaCodeFork size={12}/> {forks}</span>
                     <span className="project-card-watch"><IoEyeSharp size={12}/> {watchers}</span>
-                 <a href={url} target='_blank' className="project-card-link"><FaArrowRight size={15}/></a>
+                 <a href={url} target='_blank' className="project-card-link"><FaArrowRight size={20}/></a>
                 </div>
             </div>
         </div>

@@ -109,7 +109,7 @@ const AnimatedCursor = ({
             x: mousePosition.x - innerSize / 2,
             y: mousePosition.y - innerSize / 2,
             mixBlendMode: innerCursorInvert ? 'difference' : 'normal',
-            scale: isOnClickable ? 1.5 : 1,
+            scale: isOnClickable ? 1.3 : 1,
         },
     };
 

@@ -7,7 +7,7 @@ function App() {
     <>
       <Canvas />
       <AnimatedCursor
-        innerSize={80}
+        innerSize={55}
         innerAlpha={1}
         innerColor='255, 255, 255'
       />
